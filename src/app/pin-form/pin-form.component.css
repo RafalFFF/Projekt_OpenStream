@@ -1,11 +1,22 @@
 .pinForm{
     width: 280px;
     height: 100%;
-    position: fixed;
-    top: 50px;
+    position: absolute;
     right: 0;
+    top: 50px;
+    /* position: fixed;
+    top: 50px;
+    right: 0; */
+    transition: 0.5s;
+
     z-index: 400;
 }
+
+.hideSidebar
+{
+    transform: translateX(230px);
+}
+
 .pinFormActive{
     width: 280px;
     height: 100%;

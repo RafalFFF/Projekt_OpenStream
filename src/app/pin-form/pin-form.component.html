@@ -1,7 +1,9 @@
-<div class="pinForm">
+<div class="pinForm"
+[class.hideSidebar]="isActive"
+>
   <div id="leftBar">
     <div class="buttonHolder">
-      <button class="iconButton"></button>
+      <button class="iconButton" (click)="toggleSidebar()"></button>
     </div>
   </div>
   <div id="rightBar">
@@ -13,6 +15,7 @@
         wybierz punkt na mapie i kliknij <strong>zatwierdź.</strong>
       </p>
     </div>
+
     <h5 class="sectionTitle">Dodaj nowy przepływomierz</h5>
     <div id="form">
       <form class="addForm" 

@@ -126,8 +126,9 @@ export class MapComponent implements AfterViewInit {
       }
   })
     tiles.addTo(map);
-    
   }
+
+  
 
   ngAfterViewInit(): void {
     this.initMap();
