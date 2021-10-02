@@ -1,0 +1,10 @@
+#mian{
+    display: none;
+    width: 200px;
+    height: 250px;
+    background-color: red;
+    position: absolute;
+    z-index: 401;
+    right: 320px;
+    top: 60px;
+}

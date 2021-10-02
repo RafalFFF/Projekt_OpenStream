@@ -1,0 +1,49 @@
+<div class="pinForm">
+  <div id="leftBar">
+    <div class="buttonHolder">
+      <button class="iconButton"></button>
+    </div>
+  </div>
+  <div id="rightBar">
+    <div id="formTitle">Przepływomierz</div>
+    <div id="inctruction">
+      <h5 class="sectionTitle">Instrukcja</h5>
+      <p>
+        Wypełnij dane i kliknij przycisk <strong>dodaj punkt.</strong> Następnie
+        wybierz punkt na mapie i kliknij <strong>zatwierdź.</strong>
+      </p>
+    </div>
+    <h5 class="sectionTitle">Dodaj nowy przepływomierz</h5>
+    <div id="form">
+      <form class="addForm" 
+      [formGroup]='pinFormModel' 
+      (ngSubmit)="onSubmit()">
+        <div class="aboveInput">Nazwa</div>
+        <input type="text" 
+        placeholder="Podaj nazwę" 
+        class="textInput" 
+        formControlName="name"
+        />
+        <div class="aboveInput">Typ</div>
+        <select name="" id="" formControlName="type">
+          <option value="Przepływ Nieznany">Przepływ Nieznany</option>
+          <option value="Przepływ - SUW/ZUW">Przepływ - SUW/ZUW</option>
+          <option value="Przepływ - zbiornik">Przepływ - zbiornik</option>
+          <option value="Przepływ międzystrefowy">Przepływ międzystrefowy</option>
+          <option value="Sprzedaż - Online">Sprzedaż - Online</option>
+          <option value="Sprzedaż - odczyt co 12h">Sprzedaż - odczyt co 12h</option>
+          <option value="Sprzedaż - odczyt ręczny">Sprzedaż - odczyt ręczny</option>
+          <option value="Przepływ wirtualny">Przepływ wirtualny</option>
+        </select>
+        <div class="aboveInput">Średnia wartość Przepływu [m3/dzień]</div>
+        <input type="number" class="textInput" formControlName="averageFlow"/>
+        <br />
+        <div style="margin-left: auto; margin-right: auto; width: 80%">
+          <button id="clearButton" type="reset">Wyczyść</button>
+          <button id="submitButton" type="submit" [disabled]="!pinFormModel.valid" >Zatwierdź</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div style="clear: both"></div>
+</div>
