@@ -3,6 +3,6 @@
     </app-nav-bar>
     <app-flow-legend>
     </app-flow-legend>
-    <app-map (newCord)="addCord($event)" [markers]=pins [gugu] = pushNewPinFlag ></app-map>
+    <app-map (newCord)="addCord($event)" [markers]=pins [temporaryFlag] = pushNewPinFlag ></app-map>
     <app-pin-form (newItemEvent)="addNewItem($event)" ></app-pin-form>
 </div>

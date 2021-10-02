@@ -8,8 +8,7 @@
     z-index: 400;
 }
 
-.hideSidebar
-{
+.hideSidebar{
     transform: translateX(230px);
 }
 
@@ -18,7 +17,6 @@
     height: 100%;
     position: fixed;
     top: 50px;
-    
     z-index: 400;
 }
 #leftBar{

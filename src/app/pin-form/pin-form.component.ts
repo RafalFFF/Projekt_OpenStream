@@ -6,15 +6,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './pin-form.component.html',
   styleUrls: ['./pin-form.component.css']
 })
+
 export class PinFormComponent implements OnInit {
 
   pinFormModel: FormGroup;
   isActive:boolean = true;
  
-
   @Output() 
   newItemEvent = new EventEmitter<object>();
-
 
   constructor() {
     this.pinFormModel = new FormGroup({
@@ -24,17 +23,9 @@ export class PinFormComponent implements OnInit {
     })
   }
 
-
-  // showMenu():void{
-  //   document.getElementById('pinForm')?.classList.toggle('pinFormActive');
-  // }
-
   toggleSidebar(){
-    console.log("Bef" + this.isActive)
     this.isActive = !this.isActive;
-    console.log("Aft" + this.isActive)
   }
-
 
   ngOnInit(): void {
 

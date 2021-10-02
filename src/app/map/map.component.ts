@@ -16,7 +16,7 @@ export class MapComponent implements AfterViewInit {
   markers = new Array();
   
   @Input()
-  gugu = new Boolean();
+  temporaryFlag = new Boolean();
 
   @Output() 
   newCord = new EventEmitter<object>();
@@ -35,7 +35,7 @@ export class MapComponent implements AfterViewInit {
 
 
   map.on('click', (e)=>{
-    if(this.gugu){
+    if(this.temporaryFlag){
       let newXCordination = (e as LeafletMouseEvent).latlng.lat;
       let newYCordination = (e as LeafletMouseEvent).latlng.lng;
   
@@ -81,56 +81,51 @@ export class MapComponent implements AfterViewInit {
         iconSize:[24,24],
       });
 
-     
-
-      
-
-
-
-
       this.newCord.emit(this.sendnewCordinations);
       console.log(this.markers)
        this.markers.map(item=>{
         let icon;
-          if(item.type==="Przepływ Nieznany"){
-            icon=greeyIcon;
-          }
-          else if(item.type==="Przepływ - SUW/ZUW"){
-            icon=greenIcon;
-          }
-          else if(item.type==="Przepływ - zbiornik"){
-            icon=orangeIcon;
-          }
-          else if(item.type==="Przepływ międzystrefowy"){
-            icon=darkBlueIcon;
-          }
-          else if(item.type==="Sprzedaż - Online"){
-            icon=blueIcon;
-          }
-          else if(item.type==="Sprzedaż - odczyt co 12h"){
-            icon=purpleIcon;
-          }
-          else if(item.type==="Sprzedaż - odczyt ręczny"){
-            icon=brownIcon;
-          }
-          else if(item.type==="Przepływ wirtualny"){
-            icon=blackIcon;
+      
+          switch (item.type) {
+            case "Przepływ Nieznany":
+              icon=greeyIcon;
+              break;
+              case "Przepływ - SUW/ZUW":
+                icon=greenIcon;
+              break;
+              case "Przepływ - zbiornik":
+                icon=orangeIcon;
+              break;
+              case "Przepływ międzystrefowy":
+                icon=darkBlueIcon;
+              break;
+              case "Sprzedaż - Online":
+                icon=blueIcon;
+              break;
+              case "Sprzedaż - odczyt co 12h":
+                icon=purpleIcon;
+              break;
+              case "Sprzedaż - odczyt ręczny":
+                icon=brownIcon;
+              break;
+              case "Przepływ wirtualny":
+                icon=blackIcon;
+              break;
+          
+            default:
+              break;
           }
           let temp =new L.Marker([item.x,item.y],{icon:icon});
           temp.bindTooltip(item.name);
           temp.addTo(map);
        })
-    
-    
       }
   })
     tiles.addTo(map);
   }
 
-  
-
   ngAfterViewInit(): void {
     this.initMap();
-    this.gugu=false;
+    this.temporaryFlag=false;
   }
 }
