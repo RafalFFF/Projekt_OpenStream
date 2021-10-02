@@ -1,3 +1,5 @@
+
+
 input[type='checkbox'] {
     display: none;
 }
@@ -6,7 +8,7 @@ input[type='checkbox'] {
 
     position: absolute;
     top: 50px;
-    right: 200px;
+    right: 300px;
     z-index: 4001;
 
     width: 300px;
@@ -22,7 +24,7 @@ input[type='checkbox'] {
     color: black;
     background: whitesmoke;
     cursor: pointer;
-    border-radius: 7px;
+    /* border-radius: 7px; */
     transition: all 0.25s ease-out;
 }
 /* .lbl-toggle:hover {
@@ -44,9 +46,9 @@ input[type='checkbox'] {
 .collapsible-content .content-inner {
     /* background: rgba(0, 105, 255, .2); */
     background: whitesmoke;
-    border-bottom: 1px solid rgba(0, 105, 255, .45);
+    /* border-bottom: 1px solid rgba(0, 105, 255, .45);
     border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-bottom-right-radius: 7px; */
     padding: .5rem 1rem;
 }
 .collapsible-content p {
@@ -57,6 +59,7 @@ input[type='checkbox'] {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px 0;
 }
 
 
@@ -66,5 +69,9 @@ input[type='checkbox'] {
 
 .caption{
     display: flex;
-    
+
+}
+
+.box__text{
+    font-family: 'Poppins', sans-serif;
 }
