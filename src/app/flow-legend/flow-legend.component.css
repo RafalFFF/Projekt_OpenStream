@@ -1,10 +1,70 @@
-#mian{
+input[type='checkbox'] {
     display: none;
-    width: 200px;
-    height: 250px;
-    background-color: red;
+}
+.wrap-collabsible {
+    margin: 1.2rem 0;
+
     position: absolute;
-    z-index: 401;
-    right: 320px;
-    top: 60px;
+    top: 50px;
+    right: 200px;
+    z-index: 4001;
+
+    width: 300px;
+}
+.lbl-toggle {
+    display: block;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    color: black;
+    background: whitesmoke;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
+}
+/* .lbl-toggle:hover {
+    color: #FFF;
+} */
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+.toggle:checked + .lbl-toggle + .collapsible-content {
+    max-height: 350px;
+}
+.toggle:checked+.lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.collapsible-content .content-inner {
+    /* background: rgba(0, 105, 255, .2); */
+    background: whitesmoke;
+    border-bottom: 1px solid rgba(0, 105, 255, .45);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: .5rem 1rem;
+}
+.collapsible-content p {
+    margin-bottom: 0;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.legend{
+    padding: 0;
+}
+
+.caption{
+    display: flex;
+    
 }

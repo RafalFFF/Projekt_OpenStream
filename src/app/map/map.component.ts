@@ -8,7 +8,6 @@ import * as L from 'leaflet';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
-
   newX: Number;
   newY:Number;
   sendnewCordinations : Object;
