@@ -4,11 +4,7 @@
     position: absolute;
     right: 0;
     top: 50px;
-    /* position: fixed;
-    top: 50px;
-    right: 0; */
     transition: 0.5s;
-
     z-index: 400;
 }
 
